@@ -1,3 +1,5 @@
+Authors - Dan Caron, Abu Ashraf Masnun
+
 This is a Django project template that allows you to use the database component of Django without having to use the rest of Django (i.e. running a web server).
 
 Now you can write regular python scripts and use Django's excellent database functionality.
