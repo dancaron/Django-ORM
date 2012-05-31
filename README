@@ -1,17 +1,16 @@
-This is a Django project template that allows you to use the database component
-of Django without having to use the rest of Django (i.e. running a web server).
+This is a Django project template that allows you to use the database component of Django without having to use the rest of Django (i.e. running a web server).
 
-Now you can write regular python scripts and use Django's excellent database
-functionality. Developed on Python 2.7. Not tested on other versions.
+Now you can write regular python scripts and use Django's excellent database functionality.
+
+This repository doesn't ship with a Django installation. The system must have an existing django installation so that we can safely import required modules.
+Developed on Python 2.7 and Django 1.4.0.
 
 QUICK SETUP:
 
-1.) Inside project/manage.py - Edit the path to the project folder
-2.) Inside project/settings.py - Edit your database settings
-3.) Inside project/myscript.py - Edit the path and database settings
-4.) Inside db/models.py - Setup your models
+1.) Inside settings.py - Edit your database settings
+2.) Inside db/models.py - Setup your models
 
-myscript.py is the file where you start coding your project. Think of it like a
+main.py is the file where you start coding your project. Think of it like a
 plain old python file, but now with the power of Django's database functionality!
 
 Feel free to send pull requests if you want to improve this project.
