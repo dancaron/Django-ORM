@@ -1,13 +1,14 @@
 Django ORM Standalone Template
 ==============================
 
-Authors - Dan Caron, Abu Ashraf Masnun
+Authors - Dan Caron, Abu Ashraf Masnun, wsqy
 
 This is a Django project template that allows you to use the database component of Django without having to use the rest of Django (i.e. running a web server). Now you can write regular python scripts and use Django's excellent database functionality.
 
+
 Requirements
 ------------
-This repository doesn't ship with a Django installation. The system must have an existing django installation so that we can safely import required modules. Developed on Python 2.7 and Django 1.4.0.
+This repository doesn't ship with a Django installation. The system must have an existing django installation so that we can safely import required modules. Developed on Python 2.7+ or 3.4+ and Django 1.10.2
 
 Quick Setup
 -----------

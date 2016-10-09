@@ -1,12 +1,19 @@
 import sys
-
 try:
     from django.db import models
-except  Exception:
-    print "There was an error loading django modules. Do you have django installed?"
+except Exception:
+    print("Django Not Found,please install it")
     sys.exit()
 
-# Sample User model
+
+# Sample  model
 class User(models.Model):
-    name = models.CharField(max_length=255)
-    email = models.EmailField(max_length=255)
+    name = models.CharField(max_length=50, default="")
+
+    class Meta:
+        db_table = "user"
+
+    def __str__(self):
+        return self.name
+
+    __repr__ = __str__
