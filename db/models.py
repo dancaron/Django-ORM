@@ -1,43 +1,15 @@
 # -*- coding: utf-8 -*-
-
-# This file is part of Archivematica.
-#
-# Copyright 2010-2013 Artefactual Systems Inc. <http://artefactual.com>
-#
-# Archivematica is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# Archivematica is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with Archivematica.  If not, see <http://www.gnu.org/licenses/>.
-
-# This Django model module was auto-generated and then updated manually
-# Needs some cleanups, make sure each model has its primary_key=True
-# Feel free to rename the models, but don't rename db_table values or field names.
-
-# stdlib, alphabetical by import source
 from __future__ import absolute_import
 
 import logging
 import re
 
-# Core Django, alphabetical by import source
-from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.db import models, transaction
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 import six
-
-# Third party dependencies, alphabetical by import source
-from django_extensions.db.fields import UUIDField
 
 LOGGER = logging.getLogger("archivematica.dashboard")
 
@@ -47,16 +19,14 @@ METADATA_STATUS_UPDATED = "UPDATED"
 METADATA_STATUS = (
     (METADATA_STATUS_ORIGINAL, "original"),
     (METADATA_STATUS_REINGEST, "parsed from reingest"),
-    (METADATA_STATUS_UPDATED, "updated"),  # Might be updated for both, on rereingest
+    (METADATA_STATUS_UPDATED, "updated"),
 )
 
 # How many objects are created through bulk_create in a single database query
 BULK_CREATE_BATCH_SIZE = 2000
 
-# CUSTOM FIELDS
 
-
-class UUIDPkField(UUIDField):
+class UUIDPkField(models.UUIDField):
     def __init__(self, *args, **kwargs):
         kwargs.setdefault("max_length", 36)
         kwargs["primary_key"] = True
@@ -79,7 +49,7 @@ class BlobTextField(models.TextField):
 
 # SIGNALS
 
-
+'''
 @receiver(post_save, sender=User)
 def create_user_agent(sender, instance, **kwargs):
     LOGGER.debug("Caught post_save signal from %s with instance %r", sender, instance)
@@ -99,7 +69,7 @@ def create_user_agent(sender, instance, **kwargs):
     LOGGER.debug("Agent: %s; created: %s", agent, created)
     if created:
         UserProfile.objects.update_or_create(user=instance, defaults={"agent": agent})
-
+'''
 
 # MODELS
 
@@ -308,8 +278,8 @@ class Event(models.Model):
     """ PREMIS Events associated with Files. """
 
     id = models.AutoField(primary_key=True, db_column="pk", editable=False)
-    event_id = UUIDField(
-        auto=False, null=True, unique=True, db_column="eventIdentifierUUID"
+    event_id = models.UUIDField(
+        null=True, unique=True, db_column="eventIdentifierUUID"
     )
     file_uuid = models.ForeignKey(
         "File",
@@ -529,8 +499,8 @@ class SIPArrange(models.Model):
 
     original_path = BlobTextField(null=True, blank=True, default=None)
     arrange_path = BlobTextField()
-    file_uuid = UUIDField(auto=False, null=True, blank=True, default=None, unique=True)
-    transfer_uuid = UUIDField(auto=False, null=True, blank=True, default=None)
+    file_uuid = models.UUIDField(null=True, blank=True, default=None, unique=True)
+    transfer_uuid = models.UUIDField(null=True, blank=True, default=None)
     sip = models.ForeignKey(
         SIP,
         to_field="uuid",
@@ -803,7 +773,7 @@ class JobQuerySet(models.QuerySet):
 
 
 class Job(models.Model):
-    jobuuid = UUIDField(db_column="jobUUID", primary_key=True)
+    jobuuid = models.UUIDField(db_column="jobUUID", primary_key=True)
     jobtype = models.CharField(max_length=250, db_column="jobType", blank=True)
     createdtime = models.DateTimeField(db_column="createdTime")
     createdtimedec = models.DecimalField(
@@ -833,8 +803,8 @@ class Job(models.Model):
         max_length=50, db_column="microserviceGroup", blank=True
     )
     hidden = models.BooleanField(default=False)
-    microservicechainlink = UUIDField(
-        auto=False, null=True, blank=True, db_column="MicroServiceChainLinksPK"
+    microservicechainlink = models.UUIDField(
+        null=True, blank=True, db_column="MicroServiceChainLinksPK"
     )
     subjobof = models.CharField(max_length=36, db_column="subJobOf", blank=True)
 
@@ -959,6 +929,7 @@ class Agent(models.Model):
         db_table = u"Agents"
 
 
+'''
 class UserProfile(models.Model):
     """ Extension of the User model for additional information. """
 
@@ -974,6 +945,7 @@ class UserProfile(models.Model):
 
     class Meta:
         db_table = u"main_userprofile"
+'''
 
 
 class Report(models.Model):
@@ -1511,8 +1483,8 @@ class UnitVariable(models.Model):
     )
     variable = models.TextField(null=True, db_column="variable")
     variablevalue = models.TextField(null=True, db_column="variableValue")
-    microservicechainlink = UUIDField(
-        auto=False, null=True, blank=True, db_column="microServiceChainLink"
+    microservicechainlink = models.UUIDField(
+        null=True, blank=True, db_column="microServiceChainLink"
     )
     createdtime = models.DateTimeField(db_column="createdTime", auto_now_add=True)
     updatedtime = models.DateTimeField(db_column="updatedTime", auto_now=True)

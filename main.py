@@ -12,5 +12,8 @@ django.setup()
 from db.models import *
 
 # Start of application script (demo code below)
-for u in User.objects.all():
-	print("ID: " + str(u.id) + "\tUsername: " + u.name)
+# for u in User.objects.all():
+#	print("ID: " + str(u.id) + "\tUsername: " + u.name)
+
+for f in File.objects.all():
+	print(f)
