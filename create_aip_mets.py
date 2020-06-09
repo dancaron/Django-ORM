@@ -46,7 +46,7 @@ django.setup()
 # dashboard
 from django.utils import timezone
 
-from db.models import (
+from main.models import (
     Agent,
     Derivation,
     Directory,

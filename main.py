@@ -15,7 +15,7 @@ import django
 django.setup()
 
 # Import your models for use in your script
-from db.models import *
+from main.models import *
 
 # Start of application script (demo code below)
 # for u in User.objects.all():
@@ -78,11 +78,11 @@ class Jobs(object):
             self.write_error(traceback.format_exc())
             self.set_status(1)
 
+# basedir = /var/archivematica/sharedDirectory/watchedDirectories/workFlowDecisions/metadataReminder/123-d2906daf-9205-4e11-907c-77b02622b74f/
 
 args_example = [
     "--amdSec",
-    "--baseDirectoryPath",
-    "/var/archivematica/sharedDirectory/watchedDirectories/workFlowDecisions/metadataReminder/123-d2906daf-9205-4e11-907c-77b02622b74f/",
+    "--baseDirectoryPath", "metsout",
     "--baseDirectoryPathString",
     "SIPDirectory",
     "--fileGroupIdentifier",

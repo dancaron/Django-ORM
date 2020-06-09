@@ -12,7 +12,7 @@ import archivematicaCreateMETSMetadataCSV as createmetscsv
 import namespaces as ns
 
 # dashboard
-from db import models
+from main import models
 
 import six
 
