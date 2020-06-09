@@ -28,7 +28,7 @@ import uuid
 import lxml.etree as etree
 
 # dashboard
-from main.models import RightsStatement
+from db.models import RightsStatement
 
 # archivematicaCommon
 from countryCodes import getCodeForCountry

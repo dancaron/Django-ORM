@@ -26,7 +26,7 @@ import sys
 import lxml.etree as etree
 
 # dashboard
-from main.models import File
+from db.models import File
 
 # archivematicaCommon
 import namespaces as ns

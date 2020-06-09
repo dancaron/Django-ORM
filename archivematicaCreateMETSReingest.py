@@ -6,15 +6,15 @@ import os
 import metsrw
 import scandir
 
-import create_mets_v2 as createmets2
+import create_aip_mets as createmets2
 import archivematicaCreateMETSRights as createmetsrights
 import archivematicaCreateMETSMetadataCSV as createmetscsv
 import namespaces as ns
 
 # dashboard
-from main import models
+from db import models
 
-from django.utils import six
+import six
 
 
 def _create_premis_object(premis_object_type):

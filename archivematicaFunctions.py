@@ -37,7 +37,7 @@ from uuid import uuid4
 import scandir
 import six
 from lxml import etree
-from main.models import DashboardSetting
+from db.models import DashboardSetting
 from namespaces import NSMAP
 
 from amclient import AMClient

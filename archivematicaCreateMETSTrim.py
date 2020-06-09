@@ -27,7 +27,7 @@ import sys
 import lxml.etree as etree
 
 # dashboard
-from main.models import File
+from db.models import File
 
 import namespaces as ns
 

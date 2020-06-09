@@ -25,13 +25,17 @@ from __future__ import print_function
 import sys
 
 import archivematicaFunctions
-from custom_handlers import get_script_logger
+
+# from custom_handlers import get_script_logger
+import logging
+logger = logging
+
 
 import metsrw
 
 
 # Create a module level logger.
-logger = get_script_logger("archivematica.mcp.client.createMETSDataverse")
+# logger = get_script_logger("archivematica.mcp.client.createMETSDataverse")
 
 
 def create_dataverse_sip_dmdsec(job, sip_path):

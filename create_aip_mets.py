@@ -34,13 +34,19 @@ import sys
 import traceback
 from uuid import uuid4
 
-import django
 import scandir
 
+# Django specific settings
+import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
+
+import django
 django.setup()
+
 # dashboard
 from django.utils import timezone
-from main.models import (
+
+from db.models import (
     Agent,
     Derivation,
     Directory,
@@ -73,7 +79,11 @@ from create_mets_dataverse_v2 import (
     create_dataverse_sip_dmdsec,
     create_dataverse_tabfile_dmdsec,
 )
-from custom_handlers import get_script_logger
+
+# from custom_handlers import get_script_logger
+import logging
+logger = logging
+
 import namespaces as ns
 from sanitize_names import sanitize_name
 
@@ -125,8 +135,7 @@ class MetsState(object):
         self.CSV_METADATA = {}
         self.error_accumulator = ErrorAccumulator()
 
-
-logger = get_script_logger("archivematica.mcp.client.createMETS2")
+# logger = get_script_logger("archivematica.mcp.client.createMETS2")
 
 FSItem = collections.namedtuple("FSItem", "type path is_empty")
 FakeDirMdl = collections.namedtuple("FakeDirMdl", "uuid")
