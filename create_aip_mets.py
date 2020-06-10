@@ -38,9 +38,11 @@ import scandir
 
 # Django specific settings
 import os
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 
 import django
+
 django.setup()
 
 # dashboard
@@ -1487,9 +1489,15 @@ def write_mets(tree, filename):
     :param ElementTree tree: METS ElementTree
     :param str filename: Filename to write the METS to
     """
+
     tree.write(filename, pretty_print=True, xml_declaration=True, encoding="utf-8")
 
     import cgi
+
+    tree = etree.tostring(
+        tree, pretty_print=True, xml_declaration=True, encoding="utf-8"
+    )
+    encoded_tree = cgi.escape(tree.decode())
 
     validate_filename = filename + ".validatorTester.html"
     fileContents = """<html>
@@ -1497,20 +1505,17 @@ def write_mets(tree, filename):
   <form method="post" action="http://pim.fcla.edu/validate/results">
     <label for="document">Enter XML Document:</label>
     <br/>
-    <textarea id="directinput" rows="12" cols="76" name="document">%s</textarea>
+    <textarea id="directinput" rows="12" cols="76" name="document">{}</textarea>
     <br/>
     <br/>
     <input type="submit" value="Validate" />
     <br/>
   </form>
 </body>
-</html>""" % (
-        cgi.escape(
-            etree.tostring(
-                tree, pretty_print=True, xml_declaration=True, encoding="utf-8"
-            )
-        )
+</html>""".format(
+        encoded_tree
     )
+
     with open(validate_filename, "w") as f:
         f.write(fileContents)
 
@@ -1707,7 +1712,7 @@ def call(jobs):
                 # objects to a ``SIP``.
                 directories = {
                     d.currentlocation.rstrip("/"): d
-                    for d in Directory.objects.filter(sip_id=fileGroupIdentifier).all()
+                    for d in Directory.objects.filter(sip_id=fileGroupIdentifier.encode()).all()
                 }
 
                 state.globalStructMapCounter += 1
@@ -1735,7 +1740,7 @@ def call(jobs):
                 # Delete empty directories, see #8427
                 for root, _, _ in scandir.walk(baseDirectoryPath, topdown=False):
                     try:
-                        os.rmdir(root)
+                        # os.rmdir(root)
                         job.pyprint("Deleted empty directory", root)
                     except OSError:
                         pass
