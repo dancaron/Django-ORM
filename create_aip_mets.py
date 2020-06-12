@@ -84,6 +84,7 @@ from create_mets_dataverse_v2 import (
 
 # from custom_handlers import get_script_logger
 import logging
+
 logger = logging
 
 import namespaces as ns
@@ -136,6 +137,7 @@ class MetsState(object):
 
         self.CSV_METADATA = {}
         self.error_accumulator = ErrorAccumulator()
+
 
 # logger = get_script_logger("archivematica.mcp.client.createMETS2")
 
@@ -1712,7 +1714,9 @@ def call(jobs):
                 # objects to a ``SIP``.
                 directories = {
                     d.currentlocation.rstrip("/"): d
-                    for d in Directory.objects.filter(sip_id=fileGroupIdentifier.encode()).all()
+                    for d in Directory.objects.filter(
+                        sip_id=fileGroupIdentifier.encode()
+                    ).all()
                 }
 
                 state.globalStructMapCounter += 1

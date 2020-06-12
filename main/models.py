@@ -726,7 +726,7 @@ class Directory(models.Model):
             )
         return cls.objects.bulk_create(paths)
 
-
+'''
 class FileFormatVersion(models.Model):
     """
     Link between a File and the FormatVersion it is identified as.
@@ -753,7 +753,7 @@ class FileFormatVersion(models.Model):
             _("%(file)s is %(format)s")
             % {"file": self.file_uuid, "format": self.format_version}
         )
-
+'''
 
 class JobQuerySet(models.QuerySet):
     def get_directory_name(self):

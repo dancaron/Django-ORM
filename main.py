@@ -78,25 +78,32 @@ class Jobs(object):
             self.write_error(traceback.format_exc())
             self.set_status(1)
 
+
 # basedir = /var/archivematica/sharedDirectory/watchedDirectories/workFlowDecisions/metadataReminder/123-d2906daf-9205-4e11-907c-77b02622b74f/
+# xmlfile = /var/archivematica/sharedDirectory/watchedDirectories/workFlowDecisions/metadataReminder/123-d2906daf-9205-4e11-907c-77b02622b74f/METS.d2906daf-9205-4e11-907c-77b02622b74f.xml
+
+output_mets_file = "metsout/METS.12345.xml"
 
 args_example = [
     "--amdSec",
-    "--baseDirectoryPath", "metsout",
+    "--baseDirectoryPath",
+    "metsout",
     "--baseDirectoryPathString",
     "SIPDirectory",
     "--fileGroupIdentifier",
-    "d2906daf-9205-4e11-907c-77b02622b74f",
+    "20fb8d59-c031-40ec-b08d-83a70f2eee69",
     "--fileGroupType",
     "sip_id",
     "--xmlFile",
-    "/var/archivematica/sharedDirectory/watchedDirectories/workFlowDecisions/metadataReminder/123-d2906daf-9205-4e11-907c-77b02622b74f/METS.d2906daf-9205-4e11-907c-77b02622b74f.xml",
+    output_mets_file,
     "--sipType",
     "SIP",
 ]
 
-job = Jobs(name="create_mets", uuid="1234", args=args_example)
+job = Jobs(name="create_mets", uuid="12345", args=args_example)
 jobs = [job]
 
 create_aip_mets.call(jobs)
 print(job.error)
+print(job.status_code)
+print("If success then METS should be partially or completely at", output_mets_file)
