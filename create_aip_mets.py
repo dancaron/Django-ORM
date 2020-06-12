@@ -61,16 +61,16 @@ from main.models import (
     SIPArrange,
 )
 
-import archivematicaCreateMETSReingest
-from archivematicaCreateMETSMetadataCSV import parseMetadata
-from archivematicaCreateMETSRights import archivematicaGetRights
-from archivematicaCreateMETSRightsDspaceMDRef import (
+import create_mets_reingest
+from create_mets_md_csv import parseMetadata
+from create_mets_rights import archivematicaGetRights
+from create_mets_dspace_rights_mdref import (
     archivematicaCreateMETSRightsDspaceMDRef,
 )
-from archivematicaCreateMETSTrim import getTrimDmdSec
-from archivematicaCreateMETSTrim import getTrimFileDmdSec
-from archivematicaCreateMETSTrim import getTrimAmdSec
-from archivematicaCreateMETSTrim import getTrimFileAmdSec
+from create_mets_trim import getTrimDmdSec
+from create_mets_trim import getTrimFileDmdSec
+from create_mets_trim import getTrimAmdSec
+from create_mets_trim import getTrimFileAmdSec
 
 # archivematicaCommon
 from archivematicaFunctions import escape
