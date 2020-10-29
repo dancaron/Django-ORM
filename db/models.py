@@ -1,4 +1,5 @@
 import sys
+
 try:
     from django.db import models
 except Exception:
@@ -15,5 +16,3 @@ class User(models.Model):
 
     def __str__(self):
         return self.name
-
-    __repr__ = __str__
