@@ -11,6 +11,11 @@ django.setup()
 # Import your models for use in your script
 from db.models import *
 
-# Start of application script (demo code below)
+# START OF APPLICATION (demo code below)
+
+print("Welcome to Django ORM!")
+print("Now you have the power of Django data modeling without the overhead.")
+print("The sample output below is printing usernames from the User model.")
+
 for u in User.objects.all():
 	print("ID: " + str(u.id) + "\tUsername: " + u.name)
