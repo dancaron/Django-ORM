@@ -1,7 +1,7 @@
 Django ORM Standalone Template
 ==============================
 
-This is a python project template that allows you to use the database component of Django without having to use the rest of Django (i.e. running a web server). Now you can write regular python scripts and use Django's excellent ORM functionality with the database of your choice.
+This is a python project template that allows you to use the database component of Django without having to use the rest of Django (i.e. running a web server). Now you can write regular python scripts and use Django's excellent ORM functionality with the database of your choice. This makes it convienient for Djangonauts to write database driven python applications with the familiar and well polished Django ORM. Enjoy.
 
 Requirements
 ------------
@@ -21,8 +21,7 @@ django-orm/
 ├── README.md
 └── settings.py
 ```
-The file structure is very simple. models.py is where you setup your typical Django models. db.sqlite3 is the default database that ships with the template.
-The main.py file is the entry point for the project, and where you start your code. The settings.py file is where can swap out the SQLITE3 database for another connection, such as Postgres or AmazonRDS. 
+The file structure is very simple. The models.py file is where you setup your typical Django models. db.sqlite3 is the default database that ships with the template. The main.py file is the entry point for the project, and where you start your code. The settings.py file is where can swap out the SQLITE3 database for another connection, such as Postgres or AmazonRDS. 
 
 Quick Setup
 -----------
