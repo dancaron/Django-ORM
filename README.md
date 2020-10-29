@@ -8,12 +8,30 @@ Requirements
 - Last tested with Python 3.7 and Django 3.1.2
 - You must install django so that we can import the required modules.
 
+File Structure
+--------------
+```
+django-orm/
+├── db/
+│   ├── __init__.py
+│   └── models.py
+├── db.sqlite3
+├── main.py
+├── manage.py
+├── README.md
+└── settings.py
+```
+models.py is where you setup your typical Django models.
+db.sqlite3 is the default SQLITE3 database.
+main.py is the entry point for the project, and where you start your code.
+settings.py is where can swap out the SQLITE3 database for another connection.
+
 Quick Setup
 -----------
 
 1. pip install django
-2. Inside settings.py - Edit your database settings (sqlite3 setup by default)
-3. Inside db/models.py - Add your models (Basic user model setup by default)
+2. settings.py - (optional) edit your database settings
+3. db/models.py - Add your models
 4. python main.py (Run the project)
 
 __main.py is the file where you start coding your project.__ Think of it like a plain old python file, but now with the power of Django's ORM functionality! Feel free to send pull requests if you want to improve this project.
