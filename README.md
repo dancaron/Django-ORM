@@ -11,17 +11,17 @@ Requirements
 Quick Setup
 -----------
 
-* 1.) pip install django
-* 2.) Inside settings.py - Edit your database settings (sqlite3 setup by default)
-* 3.) Inside db/models.py - Add your models (Basic user model setup by default)
-* 4.) python main.py (Run the project)
+1.) pip install django
+2.) Inside settings.py - Edit your database settings (sqlite3 setup by default)
+3.) Inside db/models.py - Add your models (Basic user model setup by default)
+4.) python main.py (Run the project)
 
 __main.py is the file where you start coding your project.__ Think of it like a plain old python file, but now with the power of Django's ORM functionality! Feel free to send pull requests if you want to improve this project.
 
 Django Models
 -------------
 
-Link: [How to use Django Models](https://docs.djangoproject.com/en/1.10/topics/db/models/)
+Link: [How to Use Django Models](https://docs.djangoproject.com/en/3.1/topics/db/models/)
 
 License
 -------
