@@ -5,7 +5,8 @@ This is a Django project template that allows you to use the database component 
 
 Requirements
 ------------
-This repository doesn't ship with a Django installation. The system must have an existing django installation so that we can safely import required modules. Developed on Python 2.7+ or 3.4+ and Django 1.10.2
+This repository doesn't ship with a Django installation. You must install django so that we can import the required modules.
+Developed on Python 2.7+ or 3.4+ and Django 1.10.2
 
 Quick Setup
 -----------
