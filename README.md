@@ -1,8 +1,6 @@
 Django ORM Standalone Template
 ==============================
 
-Authors - Dan Caron, Abu Ashraf Masnun, wsqy
-
 This is a Django project template that allows you to use the database component of Django without having to use the rest of Django (i.e. running a web server). Now you can write regular python scripts and use Django's excellent ORM functionality with the database of your choice.
 
 Requirements
@@ -27,7 +25,7 @@ Link: [How to use Django Models](https://docs.djangoproject.com/en/1.10/topics/d
 License
 -------
 
-The MIT License (MIT) Copyright (c) 2016 Dan Caron
+The MIT License (MIT) Copyright (c) 2020 Dan Caron
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
