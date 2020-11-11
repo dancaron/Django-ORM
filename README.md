@@ -21,7 +21,7 @@ django-orm/
 ├── README.md
 └── settings.py
 ```
-The file structure is very simple. The models.py file is where you add your typical Django models. There is a toy user model included as a simple example. db.sqlite3 is the default database that ships with the template. The settings.py file is where can swap out the sqlite3 database for another database connection, such as Postgres or AmazonRDS, if you wish. The main.py file is the entry point for the project, and where you start your code. Think of it like a plain old python file, but now with the power of Django's ORM functionality.
+__The models.py file is where you add your typical Django models.__ There is a toy user model included as a simple example. db.sqlite3 is the default database that ships with the template. The settings.py file is where can swap out the sqlite3 database for another database connection, such as Postgres or AmazonRDS, if you wish. __The main.py file is the entry point for the project, and where you start your code. Think of it like a plain old python file, but now with the power of Django's ORM functionality.__
 
 Quick Setup
 -----------
@@ -41,8 +41,6 @@ Run the project
 ```
 python3 main.py
 ```
-
-__main.py is the file where you start coding your project. models.py is where you add your typical django models.__ 
 
 Feel free to send pull requests if you want to improve this project.
 
