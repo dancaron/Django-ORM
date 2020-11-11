@@ -25,10 +25,17 @@ The file structure is very simple. The models.py file is where you add your typi
 
 Quick Setup
 -----------
-
-Create virtual environment and install django
+Create a folder for your project on your local machine
+```
+mkdir myproject; cd myproject
+```
+Create a virtual environment and install django
 ```
 python3 -m venv venv; source venv/bin/activate; pip install django
+```
+Download this project template from GitHub
+```
+git clone git@github.com:dancaron/Django-ORM.git; cd Django-ORM
 ```
 Run the project
 ```
