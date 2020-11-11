@@ -5,8 +5,8 @@ This is a python project template that allows you to use the database component 
 
 Requirements
 ------------
-- Last tested with Python 3.7 and Django 3.1.2
-- You must install django so that we can import the required modules.
+- Last tested successfully with Python 3.7 and Django 3.1.2
+- Create venv and pip install django to import the required modules.
 
 File Structure
 --------------
@@ -21,17 +21,21 @@ django-orm/
 ├── README.md
 └── settings.py
 ```
-The file structure is very simple. The models.py file is where you setup your typical Django models. db.sqlite3 is the default database that ships with the template. The main.py file is the entry point for the project, and where you start your code. The settings.py file is where can swap out the SQLITE3 database for another connection, such as Postgres or AmazonRDS. 
+The file structure is very simple. The models.py file is where you add your typical Django models. There is a toy user model included as a simple example. db.sqlite3 is the default database that ships with the template. The settings.py file is where can swap out the sqlite3 database for another database connection, such as Postgres or AmazonRDS, if you wish. The main.py file is the entry point for the project, and where you start your code. Think of it like a plain old python file, but now with the power of Django's ORM functionality.
 
 Quick Setup
 -----------
 
-1. pip install django
-2. settings.py - (optional) edit your database settings
-3. db/models.py - Add your models
-4. python main.py (Run the project)
+Create virtual environment and install django
+```
+python3 -m venv venv; source venv/bin/activate; pip install django
+```
+Run the project
+```
+python3 main.py
+```
 
-__main.py is the file where you start coding your project.__ Think of it like a plain old python file, but now with the power of Django's ORM functionality.
+__main.py is the file where you start coding your project. models.py is where you add your typical django models__ 
 
 Feel free to send pull requests if you want to improve this project.
 
