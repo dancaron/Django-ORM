@@ -14,7 +14,7 @@ from db.models import *
 # START OF APPLICATION (demo code below)
 
 print("Welcome to Django ORM!")
-print("Now you have the power of Django data modeling without the overhead.")
+print("Now you have the power of Django's ORM at your fingertips!")
 print("The sample output below is printing usernames from the User model.")
 
 for u in User.objects.all():
