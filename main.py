@@ -22,7 +22,6 @@ from db.models import *
 ############################################################################
 """ Replace the code below with your own """
 
-print("Welcome to Django ORM!")
 print("Now you have the power of Django's ORM at your fingertips!")
 print("The sample output below is printing usernames from the User model.")
 
