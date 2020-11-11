@@ -50,6 +50,25 @@ python3 main.py
 
 Feel free to send pull requests if you want to improve this project.
 
+Example
+-------
+From main.py
+```
+print("Now you have the power of Django's ORM at your fingertips!")
+print("The sample output below is printing usernames from the User model.")
+
+for u in User.objects.all():
+	print("ID: " + str(u.id) + "\tUsername: " + u.name)
+```
+Output:
+```
+Now you have the power of Django's ORM at your fingertips!
+The sample output below is printing usernames from the User model.
+ID: 1	Username: wsqy
+ID: 2	Username: viking
+ID: 3	Username: dan
+```
+
 Django Models
 -------------
 
