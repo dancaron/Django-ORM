@@ -35,7 +35,7 @@ Run the project
 python3 main.py
 ```
 
-__main.py is the file where you start coding your project. models.py is where you add your typical django models__ 
+__main.py is the file where you start coding your project. models.py is where you add your typical django models.__ 
 
 Feel free to send pull requests if you want to improve this project.
 
