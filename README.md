@@ -52,7 +52,7 @@ Feel free to send pull requests if you want to improve this project.
 
 Example
 -------
-From main.py
+main.py
 ```
 print("Now you have the power of Django's ORM at your fingertips!")
 print("The sample output below is printing usernames from the User model.")
@@ -60,7 +60,7 @@ print("The sample output below is printing usernames from the User model.")
 for u in User.objects.all():
 	print("ID: " + str(u.id) + "\tUsername: " + u.name)
 ```
-Output:
+Console output from ```python3 main.py```:
 ```
 Now you have the power of Django's ORM at your fingertips!
 The sample output below is printing usernames from the User model.
