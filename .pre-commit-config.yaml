@@ -1,0 +1,55 @@
+exclude: 'docs|node_modules|migrations|.git|.tox'
+default_stages: [commit]
+fail_fast: true
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.4.0
+    hooks:
+      - id: check-docstring-first
+      - id: check-merge-conflict
+      - id: check-json
+      - id: check-yaml
+      - id: debug-statements
+      - id: detect-aws-credentials
+        args:
+          -  --allow-missing-credentials
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: pretty-format-json
+        args:
+        - --autofix
+        exclude: Pipfile.lock
+      - id: trailing-whitespace
+
+  - repo: https://github.com/psf/black
+    rev: 20.8b1
+    hooks:
+      - id: black
+
+  - repo: https://github.com/asottile/seed-isort-config
+    rev: v2.2.0
+    hooks:
+    - id: seed-isort-config
+
+  - repo: https://github.com/pre-commit/mirrors-isort
+    rev: v5.7.0
+    hooks:
+    - id: isort
+
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.8.4
+    hooks:
+      - id: flake8
+        args: ['--config=setup.cfg', '--ignore=E501']
+        additional_dependencies: [flake8-isort]
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v2.10.0
+    hooks:
+    - id: pyupgrade
+
+  - repo: https://github.com/pre-commit/pre-commit
+    rev: v2.11.0
+    hooks:
+      - id: validate_manifest
