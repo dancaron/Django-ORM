@@ -27,5 +27,7 @@ from db.models import *
 print("Now you have the power of Django's ORM at your fingertips!")
 print("The sample output below is printing usernames from the User model.")
 
+new = User.objects.create(name="Dan")
+
 for u in User.objects.all():
     print("ID: " + str(u.id) + "\tUsername: " + u.name)
