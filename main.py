@@ -6,7 +6,6 @@ these settings as is, and skip to START OF APPLICATION section below """
 
 # Turn off bytecode generation
 import sys
-
 sys.dont_write_bytecode = True
 
 # Django specific settings

@@ -43,6 +43,10 @@ Download this project template from GitHub
 ```
 git clone git@github.com:dancaron/Django-ORM.git; cd Django-ORM
 ```
+Initialize the database
+```
+python manage.py makemigrations db; python manage.py migrate
+```
 Run the project
 ```
 python3 main.py
