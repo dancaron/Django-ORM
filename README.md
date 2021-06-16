@@ -7,7 +7,7 @@ With this project template you can write regular python scripts and use Django's
 
 Requirements
 ------------
-- Last tested successfully with Python 3.7 and Django 3.1.2
+- Last tested successfully with Python 3.7.3 and Django 3.2.4
 - Create venv and pip install django to import the required modules.
 
 File Structure
