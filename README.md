@@ -56,21 +56,21 @@ Feel free to send pull requests if you want to improve this project.
 
 Example
 -------
-main.py
+Code in main.py
 ```
 print("Now you have the power of Django's ORM at your fingertips!")
 print("The sample output below is printing usernames from the User model.")
 
+new = User.objects.create(name="Dan")
+
 for u in User.objects.all():
-	print("ID: " + str(u.id) + "\tUsername: " + u.name)
+    print("ID: " + str(u.id) + "\tUsername: " + u.name)
 ```
 Console output from ```python3 main.py```:
 ```
 Now you have the power of Django's ORM at your fingertips!
 The sample output below is printing usernames from the User model.
-ID: 1	Username: wsqy
-ID: 2	Username: viking
-ID: 3	Username: dan
+ID: 1	Username: Dan
 ```
 
 Django Models
