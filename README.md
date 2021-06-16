@@ -56,21 +56,35 @@ Feel free to send pull requests if you want to improve this project.
 
 Example
 -------
-Code in main.py
+After running Quick Start above: 
+
+Code in db/models.py:
+```
+# Sample User model
+class User(models.Model):
+    name = models.CharField(max_length=50, default="Dan")
+
+    def __str__(self):
+        return self.name
+```
+Code in main.py:
 ```
 print("Now you have the power of Django's ORM at your fingertips!")
 print("The sample output below is printing usernames from the User model.")
 
-new = User.objects.create(name="Dan")
+# Seed a few users in the database
+User.objects.create(name="Dan")
+User.objects.create(name="Robert")
 
 for u in User.objects.all():
-    print("ID: " + str(u.id) + "\tUsername: " + u.name)
+    print(f'ID: {u.id} \tUsername: {u.name}')
 ```
-Console output from ```python3 main.py```:
+Output from command: ```python3 main.py```
 ```
 Now you have the power of Django's ORM at your fingertips!
 The sample output below is printing usernames from the User model.
 ID: 1	Username: Dan
+ID: 2	Username: Robert
 ```
 
 Django Models
