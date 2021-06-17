@@ -1,17 +1,17 @@
-Django ORM Standalone Python Template
-==============================
+:tada: Django ORM Standalone Python Template
+============================================
 
 This is a python project template that allows you to use the database components of Django without having to use the rest of Django (i.e. running a web server). A typical use case for using this template would be if you are writing a python script and you would like the database functionality provided by Django, but have no need for the request/response functionalty of a client/server web application that Django also provides. 
 
 With this project template you can write regular python scripts and use Django's excellent ORM functionality with the database backend of your choice. This makes it convienient for Djangonauts to write database driven python applications with the familiar and well polished Django ORM. Enjoy.
 
-Requirements
-------------
+:gear: Requirements
+-------------------
 - Last tested successfully with Python 3.7.3 and Django 3.2.4
 - Create venv and pip install django to import the required modules.
 
-File Structure
---------------
+:open_file_folder: File Structure
+---------------------------------
 ```
 django-orm/
 ├── db/
@@ -24,12 +24,12 @@ django-orm/
 ```
 
 __The main.py file is the entry point for the project, and where you start your code. You automatically get access to your models via ```from db.models import *```
-Think of it like a plain old python file, but now with the addition of Django's feature-rich models.__
+Think of it like a plain old python file, but now with the addition of Django's feature-rich models.__ :smiling_face_with_three_hearts:
 
 __The db/models.py is where you configure your typical Django models.__ There is a toy user model included as a simple example. After running the migrations command in the quick setup below, a db.sqlite3 file will be generated. The settings.py file is where can swap out the sqlite3 database for another database connection, such as Postgres or AmazonRDS, if you wish. For most applications, sqlite3 will be powerful enough. But if you need to swap databases down the road, you can easily do so, which is one of the benefits of using the Django ORM. 
 
-Quick Setup
------------
+:rocket: Quick Setup
+--------------------
 Create a folder for your project on your local machine
 ```
 mkdir myproject; cd myproject
@@ -53,8 +53,8 @@ python3 main.py
 
 Feel free to send pull requests if you want to improve this project.
 
-Example
--------
+:crystal_ball: Example
+----------------------
 After running Quick Start above: 
 
 Code in db/models.py:
@@ -86,8 +86,8 @@ ID: 1	Username: Dan
 ID: 2	Username: Robert
 ```
 
-Django Models
--------------
+:mortar_board: Django Models
+----------------------------
 
 Link: [How to Use Django Models](https://docs.djangoproject.com/en/3.1/topics/db/models/)
 
