@@ -75,7 +75,7 @@ User.objects.create(name='Robert')
 for u in User.objects.all():
     print(f'ID: {u.id} \tUsername: {u.name}')
 ```
-Output from command: ```python3 main.py```
+Output from command: ```python main.py```
 ```
 ID: 1	Username: Dan
 ID: 2	Username: Robert
