@@ -36,7 +36,7 @@ mkdir myproject; cd myproject
 ```
 Create a virtual environment and install django
 ```
-python3 -m venv venv; source venv/bin/activate; pip install django
+python -m venv venv; source venv/bin/activate; pip install django
 ```
 Download this project template from GitHub
 ```
@@ -48,7 +48,7 @@ python manage.py makemigrations db; python manage.py migrate
 ```
 Run the project
 ```
-python3 main.py
+python main.py
 ```
 
 Feel free to send pull requests if you want to improve this project.
