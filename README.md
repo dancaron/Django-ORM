@@ -61,15 +61,15 @@ Code in db/models.py:
 ```
 # Sample User model
 class User(models.Model):
-    name = models.CharField(max_length=50, default="Dan")
+    name = models.CharField(max_length=50, default='Dan')
 
     def __str__(self):
         return self.name
 ```
 Code in main.py:
 ```
-print('Now you have the power of Django's ORM at your fingertips!')
-print('The sample output below is printing usernames from the User model.')
+print("Now you have the power of Django's ORM at your fingertips!")
+print("The sample output below is printing usernames from the User model.")
 
 # Seed a few users in the database
 User.objects.create(name='Dan')
