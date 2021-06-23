@@ -68,12 +68,12 @@ class User(models.Model):
 ```
 Code in main.py:
 ```
-print("Now you have the power of Django's ORM at your fingertips!")
-print("The sample output below is printing usernames from the User model.")
+print('Now you have the power of Django's ORM at your fingertips!')
+print('The sample output below is printing usernames from the User model.')
 
 # Seed a few users in the database
-User.objects.create(name="Dan")
-User.objects.create(name="Robert")
+User.objects.create(name='Dan')
+User.objects.create(name='Robert')
 
 for u in User.objects.all():
     print(f'ID: {u.id} \tUsername: {u.name}')
