@@ -77,8 +77,6 @@ for u in User.objects.all():
 ```
 Output from command: ```python3 main.py```
 ```
-Now you have the power of Django's ORM at your fingertips!
-The sample output below is printing usernames from the User model.
 ID: 1	Username: Dan
 ID: 2	Username: Robert
 ```
