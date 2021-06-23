@@ -22,9 +22,6 @@ from db.models import *
 ############################################################################
 """ Replace the code below with your own """
 
-print("Now you have the power of Django's ORM at your fingertips!")
-print("The sample output below is printing usernames from the User model.")
-
 # Seed a few users in the database
 User.objects.create(name='Dan')
 User.objects.create(name='Robert')
