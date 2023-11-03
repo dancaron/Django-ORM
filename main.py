@@ -8,9 +8,7 @@ these settings as is, and skip to START OF APPLICATION section below """
 import sys
 sys.dont_write_bytecode = True
 
-# Django specific settings
-import os
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
+# setup django environment
 import django
 django.setup()
 
