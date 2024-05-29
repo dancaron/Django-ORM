@@ -7,7 +7,7 @@ With this project template you can write regular python scripts and use Django's
 
 :gear: Requirements
 -------------------
-- Last tested successfully with Python 3.9.5 and Django 4.0.6
+- Last tested successfully with Python 3.10.4 and Django 5.0.6
 - Create venv and pip install django to import the required modules.
 
 :open_file_folder: File Structure
