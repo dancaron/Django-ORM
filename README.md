@@ -1,7 +1,7 @@
 Django ORM Standalone
 =====================
 
-![Django](https://img.shields.io/badge/Django_ORM-blue)
+![Django](https://img.shields.io/badge/Django_ORM-Standalone-blue)
 ![Python](https://img.shields.io/badge/Python-yellow)
 
 This is a python project template that allows you to use the database components of Django without having to use the rest of Django (i.e. running a web server). :tada: A typical use case for using this template would be if you are writing a python script and you would like the database functionality provided by Django, but have no need for the request/response functionalty of a client/server web application that Django also provides. 
